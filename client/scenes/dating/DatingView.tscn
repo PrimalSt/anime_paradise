@@ -1,0 +1,800 @@
+[gd_scene load_steps=2 format=3 uid="uid://djdating123"]
+
+[ext_resource type="Script" path="res://scenes/dating/DatingView.gd" id="1_dating"]
+
+[node name="DatingView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dating")
+
+[node name="SelectPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="SelectPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Dimmer" type="ColorRect" parent="SelectPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.05, 0.1, 0.78)
+
+[node name="MainMargin" type="MarginContainer" parent="SelectPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="MainVBox" type="VBoxContainer" parent="SelectPanel/MainMargin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TopHeader" type="HBoxContainer" parent="SelectPanel/MainMargin/MainVBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleBox" type="VBoxContainer" parent="SelectPanel/MainMargin/MainVBox/TopHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="SelectPanel/MainMargin/MainVBox/TopHeader/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.45, 0.8, 1)
+theme_override_font_sizes/font_size = 28
+text = "🌸 СВИДАНИЯ & РОМАНТИКА"
+
+[node name="Subtitle" type="Label" parent="SelectPanel/MainMargin/MainVBox/TopHeader/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.75, 0.88, 1)
+theme_override_font_sizes/font_size = 14
+text = "Пригласите любимую героиню на романтическую встречу, чтобы укрепить узы и открыть воспоминания"
+
+[node name="StatsBox" type="HBoxContainer" parent="SelectPanel/MainMargin/MainVBox/TopHeader"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="DatesCountBadge" type="Label" parent="SelectPanel/MainMargin/MainVBox/TopHeader/StatsBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 15
+text = "💖 Свиданий: 0"
+
+[node name="BtnOpenGallery" type="Button" parent="SelectPanel/MainMargin/MainVBox/TopHeader/StatsBox"]
+custom_minimum_size = Vector2(160, 42)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "🖼️ Галерея CG"
+
+[node name="ContentSplit" type="HBoxContainer" parent="SelectPanel/MainMargin/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="LocationsSection" type="VBoxContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit"]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="LocSecTitle" type="Label" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/LocationsSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 20
+text = "📍 Выберите романтическую локацию:"
+
+[node name="LocScroll" type="ScrollContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/LocationsSection"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LocationsVBox" type="VBoxContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/LocationsSection/LocScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="CompanionSection" type="VBoxContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="CompSecTitle" type="Label" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.55, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "💖 Выберите спутницу:"
+
+[node name="WaifuScroll" type="ScrollContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="WaifusHBox" type="HBoxContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/WaifuScroll"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="SelectedPreviewPanel" type="PanelContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+
+[node name="HBox" type="HBoxContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="PortraitBox" type="PanelContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox"]
+custom_minimum_size = Vector2(200, 240)
+layout_mode = 2
+
+[node name="BigPortrait" type="TextureRect" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/PortraitBox"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="InfoVBox" type="VBoxContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="CompanionName" type="Label" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.45, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "Райдэн Сёгун"
+
+[node name="CompanionTitle" type="Label" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 15
+text = "Электро Архонт"
+
+[node name="RankHBox" type="HBoxContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="RankBadge" type="Label" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox/RankHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.4, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+text = "Ранг: Возлюбленная"
+
+[node name="AffectionPoints" type="Label" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox/RankHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "(Ур. 3 • 250 очков)"
+
+[node name="AffectionProgressBar" type="ProgressBar" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+value = 50.0
+
+[node name="StatsGrid" type="HBoxContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="StatCharm" type="Label" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5, 0.75, 1)
+theme_override_font_sizes/font_size = 13
+text = "💖 Очарование: 95"
+
+[node name="StatEnergy" type="Label" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "⚡ Энергия: 90"
+
+[node name="StatIntellect" type="Label" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox/StatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.55, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "🧠 Интеллект: 88"
+
+[node name="QuoteBubble" type="Label" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.7, 1)
+theme_override_font_sizes/font_size = 13
+text = "«Вечность непоколебима... Но моё сердце бьётся чаще рядом с тобой»"
+autowrap_mode = 3
+
+[node name="ActionsHBox" type="HBoxContainer" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BtnPreviewVoice" type="Button" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox/ActionsHBox"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "🎙️ Послушать голос"
+
+[node name="BtnGift" type="Button" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection/SelectedPreviewPanel/Margin/HBox/InfoVBox/ActionsHBox"]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "🎁 Подарить подарок"
+
+[node name="BtnStartDate" type="Button" parent="SelectPanel/MainMargin/MainVBox/ContentSplit/CompanionSection"]
+custom_minimum_size = Vector2(360, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "💖 Начать романтическое свидание! ✨"
+
+[node name="VNPanel" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="VNPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="AmbientParticles" type="CPUParticles2D" parent="VNPanel"]
+position = Vector2(960, 0)
+amount = 24
+lifetime = 6.0
+preprocess = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(960, 10)
+direction = Vector2(-0.4, 1)
+spread = 20.0
+gravity = Vector2(0, 15)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+angular_velocity_min = -30.0
+angular_velocity_max = 30.0
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+color = Color(1, 0.75, 0.85, 0.45)
+
+[node name="Dimmer" type="ColorRect" parent="VNPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.03, 0.08, 0.35)
+
+[node name="VNTopBar" type="PanelContainer" parent="VNPanel"]
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Margin" type="MarginContainer" parent="VNPanel/VNTopBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="HBox" type="HBoxContainer" parent="VNPanel/VNTopBar/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="LocTitleLabel" type="Label" parent="VNPanel/VNTopBar/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 18
+text = "📍 Парк цветущей сакуры"
+
+[node name="WaifuRankLabel" type="Label" parent="VNPanel/VNTopBar/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5, 0.8, 1)
+theme_override_font_sizes/font_size = 15
+text = "💖 Райдэн Сёгун • Возлюбленная"
+
+[node name="Spacer" type="Control" parent="VNPanel/VNTopBar/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BtnBacklog" type="Button" parent="VNPanel/VNTopBar/Margin/HBox"]
+custom_minimum_size = Vector2(110, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "📜 История"
+
+[node name="BtnAuto" type="Button" parent="VNPanel/VNTopBar/Margin/HBox"]
+custom_minimum_size = Vector2(100, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "▶️ Авто"
+
+[node name="BtnSkip" type="Button" parent="VNPanel/VNTopBar/Margin/HBox"]
+custom_minimum_size = Vector2(110, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "⏩ Пропуск"
+
+[node name="BtnSpeed" type="Button" parent="VNPanel/VNTopBar/Margin/HBox"]
+custom_minimum_size = Vector2(125, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "⚡ Скорость: 1x"
+
+[node name="BtnExitVN" type="Button" parent="VNPanel/VNTopBar/Margin/HBox"]
+custom_minimum_size = Vector2(90, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "🚪 Выйти"
+
+[node name="CharPortrait" type="TextureRect" parent="VNPanel"]
+custom_minimum_size = Vector2(480, 680)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -730.0
+offset_right = 240.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CharIcon" type="Label" parent="VNPanel/CharPortrait"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 160
+text = "🥰"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EmotionBadge" type="Label" parent="VNPanel/CharPortrait"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_top = 20.0
+offset_right = 110.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.45, 1)
+theme_override_font_sizes/font_size = 16
+text = "😊 Улыбка"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogArea" type="VBoxContainer" parent="VNPanel"]
+custom_minimum_size = Vector2(1300, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -650.0
+offset_top = -370.0
+offset_right = 650.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="VNPanel/DialogArea"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DialogBox" type="PanelContainer" parent="VNPanel/DialogArea"]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+
+[node name="SpeakerPlate" type="PanelContainer" parent="VNPanel/DialogArea/DialogBox"]
+custom_minimum_size = Vector2(240, 42)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PlateMargin" type="MarginContainer" parent="VNPanel/DialogArea/DialogBox/SpeakerPlate"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 6
+
+[node name="SpeakerLabel" type="Label" parent="VNPanel/DialogArea/DialogBox/SpeakerPlate/PlateMargin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.45, 0.8, 1)
+theme_override_font_sizes/font_size = 20
+text = "Райдэн Сёгун"
+
+[node name="Margin" type="MarginContainer" parent="VNPanel/DialogArea/DialogBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 46
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="VNPanel/DialogArea/DialogBox/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NarrativeLabel" type="Label" parent="VNPanel/DialogArea/DialogBox/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.76, 0.9, 1)
+theme_override_font_sizes/font_size = 15
+text = "Лепестки сакуры кружатся на весеннем ветру..."
+autowrap_mode = 3
+
+[node name="DialogText" type="Label" parent="VNPanel/DialogArea/DialogBox/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.85, 1)
+theme_override_font_sizes/font_size = 18
+text = "«Здесь так красиво сегодня... Спасибо, что пригласил меня!»"
+autowrap_mode = 3
+
+[node name="PromptIndicator" type="Label" parent="VNPanel/DialogArea/DialogBox"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 18
+text = "▼"
+
+[node name="BacklogModal" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="BacklogModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.82)
+
+[node name="Panel" type="PanelContainer" parent="BacklogModal"]
+custom_minimum_size = Vector2(900, 680)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -340.0
+offset_right = 450.0
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="BacklogModal/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="BacklogModal/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Header" type="Label" parent="BacklogModal/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 22
+text = "📜 ИСТОРИЯ ДИАЛОГА"
+horizontal_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="BacklogModal/Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BacklogList" type="VBoxContainer" parent="BacklogModal/Panel/Margin/VBox/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="BtnCloseBacklog" type="Button" parent="BacklogModal/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(180, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Вернуться"
+
+[node name="CGGalleryModal" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="CGGalleryModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.88)
+
+[node name="Panel" type="PanelContainer" parent="CGGalleryModal"]
+custom_minimum_size = Vector2(1100, 720)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -360.0
+offset_right = 550.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="CGGalleryModal/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 26
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 26
+
+[node name="VBox" type="VBoxContainer" parent="CGGalleryModal/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Header" type="Label" parent="CGGalleryModal/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 24
+text = "🖼️ ГАЛЕРЕЯ РОМАНТИЧЕСКИХ ВОСПОМИНАНИЙ"
+horizontal_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="CGGalleryModal/Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GalleryGrid" type="HFlowContainer" parent="CGGalleryModal/Panel/Margin/VBox/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+
+[node name="BtnCloseGallery" type="Button" parent="CGGalleryModal/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Закрыть галерею"
+
+[node name="ConclusionModal" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="ConclusionModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.9)
+
+[node name="Panel" type="PanelContainer" parent="ConclusionModal"]
+custom_minimum_size = Vector2(860, 720)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -430.0
+offset_top = -360.0
+offset_right = 430.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="ConclusionModal/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 28
+
+[node name="VBox" type="VBoxContainer" parent="ConclusionModal/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="ConclusionModal/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 26
+text = "🎉 НЕЗАБЫВАЕМОЕ СВИДАНИЕ! 🎉"
+horizontal_alignment = 1
+
+[node name="CGContainer" type="VBoxContainer" parent="ConclusionModal/Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="CGImage" type="TextureRect" parent="ConclusionModal/Panel/Margin/VBox/CGContainer"]
+custom_minimum_size = Vector2(480, 290)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CGUnlockBadge" type="Label" parent="ConclusionModal/Panel/Margin/VBox/CGContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.3, 1)
+theme_override_font_sizes/font_size = 15
+text = "✨ НОВОЕ РОМАНТИЧЕСКОЕ ВОСПОМИНАНИЕ РАЗБЛОКИРОВАНО!"
+horizontal_alignment = 1
+
+[node name="RankPanel" type="PanelContainer" parent="ConclusionModal/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="ConclusionModal/Panel/Margin/VBox/RankPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 14
+
+[node name="VBox" type="VBoxContainer" parent="ConclusionModal/Panel/Margin/VBox/RankPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RankProgressLabel" type="Label" parent="ConclusionModal/Panel/Margin/VBox/RankPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.45, 0.8, 1)
+theme_override_font_sizes/font_size = 18
+text = "Ранг отношений: Приятельница ➔ Возлюбленная!"
+horizontal_alignment = 1
+
+[node name="LevelUpBadge" type="Label" parent="ConclusionModal/Panel/Margin/VBox/RankPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "🌟 ПОВЫШЕНИЕ УРОВНЯ СИМПАТИИ! 🌟"
+horizontal_alignment = 1
+
+[node name="AffectionGainLabel" type="Label" parent="ConclusionModal/Panel/Margin/VBox/RankPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 15
+text = "Получено: +55 Очков Любви ❤️"
+horizontal_alignment = 1
+
+[node name="RewardsLabel" type="Label" parent="ConclusionModal/Panel/Margin/VBox/RankPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Награда: +15 Кристаллов Любви 💎"
+horizontal_alignment = 1
+
+[node name="ConclusionAffectionBar" type="ProgressBar" parent="ConclusionModal/Panel/Margin/VBox/RankPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+value = 50.0
+
+[node name="BtnCloseConclusion" type="Button" parent="ConclusionModal/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(280, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+text = "Сохранить воспоминания 💖"
+
+[node name="FullscreenCGModal" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="FullscreenCGModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.95)
+
+[node name="FullCGImage" type="TextureRect" parent="FullscreenCGModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TitleBadge" type="Label" parent="FullscreenCGModal"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 24.0
+offset_right = 250.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 20
+text = "🖼️ Воспоминание"
+horizontal_alignment = 1
+
+[node name="HintLabel" type="Label" parent="FullscreenCGModal"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -45.0
+offset_right = 200.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 0.75)
+theme_override_font_sizes/font_size = 14
+text = "Нажмите в любом месте, чтобы закрыть"
+horizontal_alignment = 1

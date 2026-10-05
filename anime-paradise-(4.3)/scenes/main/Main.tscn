@@ -1,0 +1,227 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5q3yvxk0k123"]
+
+[ext_resource type="Script" path="res://scenes/main/Main.gd" id="1_main"]
+[ext_resource type="PackedScene" uid="uid://b7vyu5k0l123" path="res://scenes/auth/AuthModal.tscn" id="2_auth_scene"]
+[ext_resource type="PackedScene" uid="uid://s001settings" path="res://scenes/settings/SettingsModal.tscn" id="3_settings_scene"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.08, 0.12, 1)
+
+[node name="TopBar" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TopBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopBar/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TitleLabel" type="Label" parent="TopBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.45, 0.75, 1)
+theme_override_font_sizes/font_size = 26
+text = "✨ ANIME PARADISE"
+
+[node name="Spacer" type="Control" parent="TopBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CoinsContainer" type="HBoxContainer" parent="TopBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CoinIcon" type="Label" parent="TopBar/MarginContainer/HBoxContainer/CoinsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🪙"
+
+[node name="CoinsLabel" type="Label" parent="TopBar/MarginContainer/HBoxContainer/CoinsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 20
+text = "1500"
+
+[node name="GemsContainer" type="HBoxContainer" parent="TopBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="GemIcon" type="Label" parent="TopBar/MarginContainer/HBoxContainer/GemsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "💎"
+
+[node name="GemsLabel" type="Label" parent="TopBar/MarginContainer/HBoxContainer/GemsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "50"
+
+[node name="ShardsContainer" type="HBoxContainer" parent="TopBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ShardIcon" type="Label" parent="TopBar/MarginContainer/HBoxContainer/ShardsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🔮"
+
+[node name="ShardsLabel" type="Label" parent="TopBar/MarginContainer/HBoxContainer/ShardsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.4, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="UserContainer" type="HBoxContainer" parent="TopBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="UserIcon" type="Label" parent="TopBar/MarginContainer/HBoxContainer/UserContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "👤"
+
+[node name="UsernameLabel" type="Label" parent="TopBar/MarginContainer/HBoxContainer/UserContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Player"
+
+[node name="BtnSettings" type="Button" parent="TopBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "⚙️ Настройки"
+
+[node name="BtnLogout" type="Button" parent="TopBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Выход"
+
+[node name="ContentArea" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 70.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BottomBar" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomBar"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 30
+
+[node name="BtnGacha" type="Button" parent="BottomBar/HBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "🎰 Кейсы (Gacha)"
+
+[node name="BtnRoster" type="Button" parent="BottomBar/HBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "💖 Коллекция"
+
+[node name="BtnDorm" type="Button" parent="BottomBar/HBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "🏠 Общежитие"
+
+[node name="BtnDating" type="Button" parent="BottomBar/HBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "🌸 Свидания"
+
+[node name="BtnShop" type="Button" parent="BottomBar/HBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "🛍️ Магазин"
+
+[node name="AuthDimmer" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.04, 0.08, 0.85)
+
+[node name="AuthModal" parent="." instance=ExtResource("2_auth_scene")]
+visible = false
+layout_mode = 1
+
+[node name="SettingsModal" parent="." instance=ExtResource("3_settings_scene")]
+visible = false
+layout_mode = 1
+
+[node name="ToastOverlay" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ToastPanel" type="PanelContainer" parent="ToastOverlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 80.0
+offset_right = 250.0
+offset_bottom = 140.0
+grow_horizontal = 2
+
+[node name="ToastLabel" type="Label" parent="ToastOverlay/ToastPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Notification"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ModalsLayer" type="CanvasLayer" parent="."]
+layer = 10

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "dango_milk",
+    "name": "Данго-молоко",
+    "type": "food",
+    "description": "Сладкий молочный десерт с шариками данго. Любимое лакомство Райдэн Сёгун.",
+    "hunger_restore": 35,
+    "affection_bonus": 15,
+    "price": 50,
+    "currency": "coins"
+  },
+  {
+    "id": "strawberry_cake",
+    "name": "Клубничный торт",
+    "type": "food",
+    "description": "Воздушный бисквит со свежей клубникой и взбитыми сливками.",
+    "hunger_restore": 45,
+    "affection_bonus": 20,
+    "price": 80,
+    "currency": "coins"
+  },
+  {
+    "id": "matcha_tea",
+    "name": "Маття Латте",
+    "type": "food",
+    "description": "Традиционный терпкий японский чай маття с нежной пенкой.",
+    "hunger_restore": 20,
+    "affection_bonus": 10,
+    "price": 30,
+    "currency": "coins"
+  },
+  {
+    "id": "curry_ramen",
+    "name": "Карри-рамен",
+    "type": "food",
+    "description": "Сытный острый рамен с пряным соусом карри и хрустящими нори.",
+    "hunger_restore": 60,
+    "affection_bonus": 20,
+    "price": 90,
+    "currency": "coins"
+  },
+  {
+    "id": "spicy_tofu",
+    "name": "Острый тофу",
+    "type": "food",
+    "description": "Огненный сычуаньский тофу в ароматном масле. Любимое блюдо Ху Тао!",
+    "hunger_restore": 40,
+    "affection_bonus": 20,
+    "price": 60,
+    "currency": "coins"
+  },
+  {
+    "id": "tea_buns",
+    "name": "Чайные булочки",
+    "type": "food",
+    "description": "Свежеиспеченные теплые булочки с нежным сливочным кремом.",
+    "hunger_restore": 30,
+    "affection_bonus": 15,
+    "price": 40,
+    "currency": "coins"
+  },
+  {
+    "id": "beef_steak",
+    "name": "Королевский стейк",
+    "type": "food",
+    "description": "Сочнейший кусок мраморной говядины. Сейбер придёт в неописуемый восторг!",
+    "hunger_restore": 75,
+    "affection_bonus": 30,
+    "price": 140,
+    "currency": "coins"
+  },
+  {
+    "id": "cinnamon_roll",
+    "name": "Булочка с корицей",
+    "type": "food",
+    "description": "Ароматная выпечка с корицей и глазурью. Очень нравится Хинате.",
+    "hunger_restore": 30,
+    "affection_bonus": 15,
+    "price": 40,
+    "currency": "coins"
+  },
+  {
+    "id": "miso_soup",
+    "name": "Домашний мисо-суп",
+    "type": "food",
+    "description": "Традиционный суп с тофу и вакаме. Успокаивает душу и согревает в ненастье.",
+    "hunger_restore": 25,
+    "affection_bonus": 10,
+    "price": 35,
+    "currency": "coins"
+  },
+  {
+    "id": "golden_ribbon",
+    "name": "Шёлковая лента",
+    "type": "gift",
+    "description": "Изящная алая лента из шелка. Универсальный подарок, дающий много симпатии.",
+    "hunger_restore": 0,
+    "affection_bonus": 60,
+    "price": 200,
+    "currency": "coins"
+  },
+  {
+    "id": "music_box",
+    "name": "Хрустальная шкатулка",
+    "type": "gift",
+    "description": "Заводная шкатулка с умиротворяющей мелодией. Значительно повышает настроение.",
+    "hunger_restore": 0,
+    "affection_bonus": 120,
+    "price": 10,
+    "currency": "love_gems"
+  }
+]

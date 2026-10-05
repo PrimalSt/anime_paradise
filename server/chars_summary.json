@@ -1,0 +1,577 @@
+[
+  {
+    "raiden_genshin": {
+      "name": "Райдэн Сёгун",
+      "franchise": "Genshin Impact",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Кимоно Архонта",
+          "unlocked": true
+        },
+        {
+          "id": "modern_suit",
+          "name": "Деловой смокинг",
+          "unlocked": false
+        },
+        {
+          "id": "summer_kimono",
+          "name": "Летнее юката",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "rem_rezero": {
+      "name": "Рем",
+      "franchise": "Re:Zero",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Платье горничной",
+          "unlocked": true
+        },
+        {
+          "id": "casual_dress",
+          "name": "Белый сарафан",
+          "unlocked": false
+        },
+        {
+          "id": "winter_coat",
+          "name": "Зимнее пальто с ушками",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "asuka_eva": {
+      "name": "Аска Лэнгли",
+      "franchise": "Evangelion",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Школьная форма",
+          "unlocked": true
+        },
+        {
+          "id": "plugsuit_red",
+          "name": "Алый контактный комбез",
+          "unlocked": false
+        },
+        {
+          "id": "gothic_punk",
+          "name": "Готический наряд",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "saber_fate": {
+      "name": "Артория (Сейбер)",
+      "franchise": "Fate/stay night",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Доспех короля",
+          "unlocked": true
+        },
+        {
+          "id": "blue_dress",
+          "name": "Лазурное бальное платье",
+          "unlocked": false
+        },
+        {
+          "id": "suit_rider",
+          "name": "Черный смокинг мечника",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "hutao_genshin": {
+      "name": "Ху Тао",
+      "franchise": "Genshin Impact",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Шляпа и сюртук Ваншэн",
+          "unlocked": true
+        },
+        {
+          "id": "ghost_festival",
+          "name": "Наряд праздника духов",
+          "unlocked": false
+        },
+        {
+          "id": "casual_plum",
+          "name": "Платье цветущей сливы",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "emilia_rezero": {
+      "name": "Эмилия",
+      "franchise": "Re:Zero",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Одежды полуэльфа",
+          "unlocked": true
+        },
+        {
+          "id": "cloak_puck",
+          "name": "Плащ с ушками Пака",
+          "unlocked": false
+        },
+        {
+          "id": "crystal_dress",
+          "name": "Кристальное бальное платье",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "rei_eva": {
+      "name": "Рей Аянами",
+      "franchise": "Evangelion",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Школьная форма",
+          "unlocked": true
+        },
+        {
+          "id": "white_plugsuit",
+          "name": "Белый контактный комбинезон",
+          "unlocked": false
+        },
+        {
+          "id": "black_plugsuit",
+          "name": "Черный контактный комбез",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "yor_spy": {
+      "name": "Йор Форджер",
+      "franchise": "Spy x Family",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Уютный красный свитер",
+          "unlocked": true
+        },
+        {
+          "id": "thorn_princess",
+          "name": "Платье Тернистой Принцессы",
+          "unlocked": false
+        },
+        {
+          "id": "mother_casual",
+          "name": "Элегантное пальто миссис Форджер",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "hinata_naruto": {
+      "name": "Хината Хьюга",
+      "franchise": "Naruto",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Куртка шиноби Листа",
+          "unlocked": true
+        },
+        {
+          "id": "kimono_hyuga",
+          "name": "Традиционное фиолетовое кимоно",
+          "unlocked": false
+        },
+        {
+          "id": "last_mission",
+          "name": "Боевой жилет The Last",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "miku_vocaloid": {
+      "name": "Хацунэ Мику",
+      "franchise": "Vocaloid",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Сценический костюм",
+          "unlocked": true
+        },
+        {
+          "id": "sakura_miku",
+          "name": "Сакура Мику в розовом",
+          "unlocked": false
+        },
+        {
+          "id": "cyber_diva",
+          "name": "Футуристический кибер-наряд",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "madoka_magica": {
+      "name": "Мадока Канаме",
+      "franchise": "Madoka Magica",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Розовое платье волшебницы",
+          "unlocked": true
+        },
+        {
+          "id": "school_uniform",
+          "name": "Школьная форма Митакихара",
+          "unlocked": false
+        },
+        {
+          "id": "goddess_madoka",
+          "name": "Божественное сияющее одеяние",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "sinon_sao": {
+      "name": "Синон",
+      "franchise": "Sword Art Online",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Экипировка снайпера GGO",
+          "unlocked": true
+        },
+        {
+          "id": "alo_cait_sith",
+          "name": "Костюм лучницы Кайт Ши ALO",
+          "unlocked": false
+        },
+        {
+          "id": "casual_glasses",
+          "name": "Уютный свитер с очками",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "violet_evergarden": {
+      "name": "Вайолет Эвергарден",
+      "franchise": "Violet Evergarden",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Униформа почтовой компании",
+          "unlocked": true
+        },
+        {
+          "id": "parasol_travel",
+          "name": "Дорожное пальто с зонтиком",
+          "unlocked": false
+        },
+        {
+          "id": "white_ceremony",
+          "name": "Белоснежное бальное платье",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "frieren_magic": {
+      "name": "Фрирен",
+      "franchise": "Frieren: Beyond Journey's End",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Мантия странницы",
+          "unlocked": true
+        },
+        {
+          "id": "winter_journey",
+          "name": "Зимний дорожный наряд",
+          "unlocked": false
+        },
+        {
+          "id": "ball_dress",
+          "name": "Магическое бальное платье",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "makima_csm": {
+      "name": "Макима",
+      "franchise": "Chainsaw Man",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Костюм Общественной Безопасности",
+          "unlocked": true
+        },
+        {
+          "id": "trench_coat",
+          "name": "Черный плащ охотницы",
+          "unlocked": false
+        },
+        {
+          "id": "casual_shirt",
+          "name": "Белая домашняя рубашка",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "kurumi_tokisaki": {
+      "name": "Куруми Токисаки",
+      "franchise": "Date A Live",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Астральное платье Элохим",
+          "unlocked": true
+        },
+        {
+          "id": "school_uniform",
+          "name": "Школьная форма Райдзэн",
+          "unlocked": false
+        },
+        {
+          "id": "gothic_lolita",
+          "name": "Черное платье готической лолиты",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "marin_kitagawa": {
+      "name": "Марин Китагава",
+      "franchise": "My Dress-Up Darling",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Школьная форма с чокером",
+          "unlocked": true
+        },
+        {
+          "id": "shizuku_kuroe",
+          "name": "Косплей Сидзуку Куроэ",
+          "unlocked": false
+        },
+        {
+          "id": "summer_swimsuit",
+          "name": "Летнее бикини с парео",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "megumin_konosuba": {
+      "name": "Мэгумин",
+      "franchise": "KonoSuba",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Одеяние Алого мага",
+          "unlocked": true
+        },
+        {
+          "id": "crimson_school",
+          "name": "Школьная форма Алых демонов",
+          "unlocked": false
+        },
+        {
+          "id": "pajama_chomusuke",
+          "name": "Пижама с Чомуске",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "aqua_konosuba": {
+      "name": "Аква",
+      "franchise": "KonoSuba",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Одеяние верховной богини",
+          "unlocked": true
+        },
+        {
+          "id": "tavern_apron",
+          "name": "Трактирный фартук",
+          "unlocked": false
+        },
+        {
+          "id": "axis_festival",
+          "name": "Праздничный наряд культа Аксис",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "nezuko_demonslayer": {
+      "name": "Недзуко Камадо",
+      "franchise": "Demon Slayer",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Розовое кимоно с бамбуком",
+          "unlocked": true
+        },
+        {
+          "id": "awakened_form",
+          "name": "Пробуждённая форма демона",
+          "unlocked": false
+        },
+        {
+          "id": "sun_walker",
+          "name": "Кимоно под солнцем",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "holo_spice": {
+      "name": "Холо Мудрая",
+      "franchise": "Spice and Wolf",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Крестьянская дорожная туника",
+          "unlocked": true
+        },
+        {
+          "id": "merchant_dress",
+          "name": "Городское платье купчихи",
+          "unlocked": false
+        },
+        {
+          "id": "winter_fur",
+          "name": "Зимний меховой плащ Йойца",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "chisato_lycoris": {
+      "name": "Чисато Нишикиги",
+      "franchise": "Lycoris Recoil",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Красно-белая униформа DA",
+          "unlocked": true
+        },
+        {
+          "id": "cafe_kimono",
+          "name": "Кимоно с фартуком кафе Лико-Реко",
+          "unlocked": false
+        },
+        {
+          "id": "casual_summer",
+          "name": "Летний городской наряд",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "anya_spy": {
+      "name": "Аня Форджер",
+      "franchise": "Spy x Family",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Форма академии Эдем",
+          "unlocked": true
+        },
+        {
+          "id": "star_pajamas",
+          "name": "Пижама со звёздами",
+          "unlocked": false
+        },
+        {
+          "id": "detective_coat",
+          "name": "Детективный плащ шпиона",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "bocchi_hitori": {
+      "name": "Хитори Гото (Боччи)",
+      "franchise": "Bocchi the Rock!",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Розовый спортивный костюм",
+          "unlocked": true
+        },
+        {
+          "id": "band_tshirt",
+          "name": "Концертная футболка Kessoku Band",
+          "unlocked": false
+        },
+        {
+          "id": "maid_costume",
+          "name": "Платье служанки школьного фестиваля",
+          "unlocked": false
+        }
+      ]
+    }
+  },
+  {
+    "chika_fujiwara": {
+      "name": "Чика Фудзивара",
+      "franchise": "Kaguya-sama: Love is War",
+      "outfits": [
+        {
+          "id": "default",
+          "name": "Форма академии Сютин с бантиком",
+          "unlocked": true
+        },
+        {
+          "id": "detective_cap",
+          "name": "Костюм детектива любви",
+          "unlocked": false
+        },
+        {
+          "id": "chika_dance",
+          "name": "Наряд танца Чики",
+          "unlocked": false
+        }
+      ]
+    }
+  }
+]

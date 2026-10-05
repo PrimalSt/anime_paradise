@@ -1,0 +1,5 @@
+res://scenes/dorm/DormView.gd
+res://scenes/dorm/DormView.tscn
+res://scenes/main/Main.gd
+res://scripts/autoload/AudioManager.gd
+res://scripts/autoload/GameSession.gd

@@ -1,0 +1,579 @@
+[gd_scene load_steps=2 format=3 uid="uid://djroster123"]
+
+[ext_resource type="Script" path="res://scenes/roster/RosterView.gd" id="1_roster"]
+
+[node name="RosterView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_roster")
+
+[node name="MainVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 16.0
+offset_right = -30.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="TopHeaderPanel" type="PanelContainer" parent="MainVBox"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="MainVBox/TopHeaderPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="MainVBox/TopHeaderPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TitleBox" type="VBoxContainer" parent="MainVBox/TopHeaderPanel/Margin/HBox"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MainVBox/TopHeaderPanel/Margin/HBox/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.45, 0.8, 1)
+theme_override_font_sizes/font_size = 22
+text = "👑 КОЛЛЕКЦИЯ ВАЙФУ"
+
+[node name="SubtitleLabel" type="Label" parent="MainVBox/TopHeaderPanel/Margin/HBox/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.85, 1)
+theme_override_font_sizes/font_size = 12
+text = "Управляйте спутницами, повышайте их звёзды и открывайте наряды"
+
+[node name="Spacer" type="Control" parent="MainVBox/TopHeaderPanel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CollectionProgressBox" type="VBoxContainer" parent="MainVBox/TopHeaderPanel/Margin/HBox"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="ProgressLabel" type="Label" parent="MainVBox/TopHeaderPanel/Margin/HBox/CollectionProgressBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 13
+text = "Коллекция: 0 / 13 (0%)"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MainVBox/TopHeaderPanel/Margin/HBox/CollectionProgressBox"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+show_percentage = false
+
+[node name="StarPowerLabel" type="Label" parent="MainVBox/TopHeaderPanel/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 15
+text = "⭐ Сила звёзд: 0"
+
+[node name="FavoritesCountLabel" type="Label" parent="MainVBox/TopHeaderPanel/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "💖 Избранных: 0"
+
+[node name="DatesCountLabel" type="Label" parent="MainVBox/TopHeaderPanel/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0.8, 1)
+theme_override_font_sizes/font_size = 15
+text = "💌 Свиданий: 0"
+
+[node name="FilterControlPanel" type="PanelContainer" parent="MainVBox"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="MainVBox/FilterControlPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="HBox" type="HBoxContainer" parent="MainVBox/FilterControlPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SearchInput" type="LineEdit" parent="MainVBox/FilterControlPanel/Margin/HBox"]
+custom_minimum_size = Vector2(260, 36)
+layout_mode = 2
+placeholder_text = "🔍 Поиск по имени или тайтлу..."
+clear_button_enabled = true
+
+[node name="RarityChipsBox" type="HBoxContainer" parent="MainVBox/FilterControlPanel/Margin/HBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FranchiseOption" type="OptionButton" parent="MainVBox/FilterControlPanel/Margin/HBox"]
+custom_minimum_size = Vector2(190, 36)
+layout_mode = 2
+
+[node name="BtnFavoritesOnly" type="Button" parent="MainVBox/FilterControlPanel/Margin/HBox"]
+custom_minimum_size = Vector2(150, 36)
+layout_mode = 2
+toggle_mode = true
+text = "⭐ Избранные"
+
+[node name="Spacer2" type="Control" parent="MainVBox/FilterControlPanel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SortLabel" type="Label" parent="MainVBox/FilterControlPanel/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "Сортировка:"
+
+[node name="SortOption" type="OptionButton" parent="MainVBox/FilterControlPanel/Margin/HBox"]
+custom_minimum_size = Vector2(180, 36)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="HFlowContainer" parent="MainVBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+theme_override_constants/h_separation = 22
+theme_override_constants/v_separation = 22
+
+[node name="DetailModal" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="DetailModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.88)
+
+[node name="Panel" type="PanelContainer" parent="DetailModal"]
+custom_minimum_size = Vector2(1240, 740)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -620.0
+offset_top = -370.0
+offset_right = 620.0
+offset_bottom = 370.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="DetailModal/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 22
+
+[node name="MainHBox" type="HBoxContainer" parent="DetailModal/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="LeftCol" type="VBoxContainer" parent="DetailModal/Panel/Margin/MainHBox"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PortraitFrame" type="PanelContainer" parent="DetailModal/Panel/Margin/MainHBox/LeftCol"]
+custom_minimum_size = Vector2(400, 480)
+layout_mode = 2
+
+[node name="BigPortrait" type="TextureRect" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/PortraitFrame"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BtnCardFavorite" type="Button" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/PortraitFrame"]
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 22
+text = "★"
+
+[node name="VoiceBox" type="PanelContainer" parent="DetailModal/Panel/Margin/MainHBox/LeftCol"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/VoiceBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/VoiceBox/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="VoiceHeader" type="Label" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/VoiceBox/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 13
+text = "🎙️ Реплики & Голос героини:"
+
+[node name="VoiceButtonsHBox" type="HBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/VoiceBox/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="BtnVoiceGreeting" type="Button" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/VoiceBox/Margin/VBox/VoiceButtonsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "Привет"
+
+[node name="BtnVoiceHeadpat" type="Button" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/VoiceBox/Margin/VBox/VoiceButtonsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "Ласка"
+
+[node name="BtnVoiceFeed" type="Button" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/VoiceBox/Margin/VBox/VoiceButtonsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "Еда"
+
+[node name="BtnVoiceLevel" type="Button" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/VoiceBox/Margin/VBox/VoiceButtonsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "Сила"
+
+[node name="BtnVoiceLove" type="Button" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/VoiceBox/Margin/VBox/VoiceButtonsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 11
+text = "Любовь"
+
+[node name="DialogueBalloon" type="Label" parent="DetailModal/Panel/Margin/MainHBox/LeftCol/VoiceBox/Margin/VBox"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.85, 1)
+theme_override_font_sizes/font_size = 13
+text = "«Привет! Я так рада видеть тебя!»"
+autowrap_mode = 3
+
+[node name="RightCol" type="VBoxContainer" parent="DetailModal/Panel/Margin/MainHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="TopInfoBar" type="HBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="NameBox" type="VBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/TopInfoBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharName" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/TopInfoBar/NameBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.45, 0.8, 1)
+theme_override_font_sizes/font_size = 28
+text = "Райдэн Сёгун"
+
+[node name="CharTitleFranchise" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/TopInfoBar/NameBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.95, 1)
+theme_override_font_sizes/font_size = 14
+text = "Электро Архонт • Genshin Impact"
+
+[node name="BadgesBox" type="VBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/TopInfoBar"]
+layout_mode = 2
+alignment = 1
+
+[node name="RarityBadge" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/TopInfoBar/BadgesBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 18
+text = "★ UR ★"
+horizontal_alignment = 2
+
+[node name="StarsLabel" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/TopInfoBar/BadgesBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_font_sizes/font_size = 18
+text = "★★★☆☆"
+horizontal_alignment = 2
+
+[node name="BioLabel" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "Верховная правительница Инадзумы, воплощение молнии..."
+autowrap_mode = 3
+
+[node name="DetailTabsScroll" type="ScrollContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollVBox" type="VBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="StatsBox" type="PanelContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StatsTitle" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 14
+text = "📊 ХАРАКТЕРИСТИКИ ГЕРОИНИ (С УЧЕТОМ ЗВЁЗД):"
+
+[node name="CharmHBox" type="HBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox"]
+layout_mode = 2
+
+[node name="CharmName" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox/CharmHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.45, 0.75, 1)
+theme_override_font_sizes/font_size = 13
+text = "💖 Очарование:"
+
+[node name="CharmBar" type="ProgressBar" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox/CharmHBox"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 200.0
+value = 95.0
+
+[node name="CharmValue" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox/CharmHBox"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "95 (+19)"
+horizontal_alignment = 2
+
+[node name="EnergyHBox" type="HBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox"]
+layout_mode = 2
+
+[node name="EnergyName" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox/EnergyHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "⚡ Энергия:"
+
+[node name="EnergyBar" type="ProgressBar" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox/EnergyHBox"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 200.0
+value = 90.0
+
+[node name="EnergyValue" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox/EnergyHBox"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "90 (+18)"
+horizontal_alignment = 2
+
+[node name="IntellectHBox" type="HBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox"]
+layout_mode = 2
+
+[node name="IntellectName" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox/IntellectHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.55, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "🧠 Интеллект:"
+
+[node name="IntellectBar" type="ProgressBar" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox/IntellectHBox"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 200.0
+value = 88.0
+
+[node name="IntellectValue" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/StatsBox/Margin/VBox/IntellectHBox"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "88 (+17)"
+horizontal_alignment = 2
+
+[node name="AscensionBox" type="PanelContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/AscensionBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="HBox" type="HBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/AscensionBox/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="AscendInfo" type="VBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/AscensionBox/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="AscendTitle" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/AscensionBox/Margin/HBox/AscendInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 14
+text = "🌟 ВОЗВЫШЕНИЕ ЗВЁЗД (СТАТУС & ПРИРОСТ ХАРАКТЕРИСТИК)"
+
+[node name="AscendDesc" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/AscensionBox/Margin/HBox/AscendInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 12
+text = "Повышает ранг до 4★ (+20% ко всем характеристикам). Требуется 120 Осколков Души."
+
+[node name="BtnAscend" type="Button" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/AscensionBox/Margin/HBox"]
+custom_minimum_size = Vector2(210, 44)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 13
+text = "🌟 Возвысить (60 🔮)"
+
+[node name="MilestonesBox" type="PanelContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/MilestonesBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/MilestonesBox/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MilestonesTitle" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/MilestonesBox/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5, 0.85, 1)
+theme_override_font_sizes/font_size = 14
+text = "💖 ЭТАПЫ СИМПАТИИ & НАГРАДЫ:"
+
+[node name="AffectionHeaderHBox" type="HBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/MilestonesBox/Margin/VBox"]
+layout_mode = 2
+
+[node name="AffectionStatusLabel" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/MilestonesBox/Margin/VBox/AffectionHeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.45, 0.75, 1)
+theme_override_font_sizes/font_size = 13
+text = "❤️ Ранг: Близкая подруга (Ур. 3)"
+
+[node name="AffectionPointsLabel" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/MilestonesBox/Margin/VBox/AffectionHeaderHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.95, 1)
+theme_override_font_sizes/font_size = 13
+text = "250 / 350 очков до Ур. 4"
+horizontal_alignment = 2
+
+[node name="AffectionProgressBar" type="ProgressBar" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/MilestonesBox/Margin/VBox"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+max_value = 100.0
+value = 45.0
+show_percentage = false
+
+[node name="MilestonesHBox" type="HBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/MilestonesBox/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="WardrobeBox" type="PanelContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/WardrobeBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/WardrobeBox/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="WardrobeTitle" type="Label" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/WardrobeBox/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.85, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "👗 ГАРДЕРОБ (СМЕНА ОБЛИКОВ):"
+
+[node name="OutfitsHBox" type="HBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol/DetailTabsScroll/ScrollVBox/WardrobeBox/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ActionsHBox" type="HBoxContainer" parent="DetailModal/Panel/Margin/MainHBox/RightCol"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="BtnHeadpat" type="Button" parent="DetailModal/Panel/Margin/MainHBox/RightCol/ActionsHBox"]
+custom_minimum_size = Vector2(140, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "❤️ Погладить"
+
+[node name="BtnFeed" type="Button" parent="DetailModal/Panel/Margin/MainHBox/RightCol/ActionsHBox"]
+custom_minimum_size = Vector2(140, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "🍰 Покормить"
+
+[node name="BtnGoDate" type="Button" parent="DetailModal/Panel/Margin/MainHBox/RightCol/ActionsHBox"]
+custom_minimum_size = Vector2(160, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "💌 На свидание"
+
+[node name="Spacer" type="Control" parent="DetailModal/Panel/Margin/MainHBox/RightCol/ActionsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BtnCloseDetail" type="Button" parent="DetailModal/Panel/Margin/MainHBox/RightCol/ActionsHBox"]
+custom_minimum_size = Vector2(120, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Закрыть"

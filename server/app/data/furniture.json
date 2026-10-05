@@ -1,0 +1,65 @@
+[
+  {
+    "id": "cozy_bed",
+    "name": "Королевская кровать",
+    "type": "bed",
+    "comfort": 40,
+    "price": 300,
+    "currency": "coins",
+    "description": "Мягкая просторная кровать с шелковыми простынями. Девочки обожают на ней дремать."
+  },
+  {
+    "id": "plush_sofa",
+    "name": "Велюровый диван",
+    "type": "sofa",
+    "comfort": 30,
+    "price": 200,
+    "currency": "coins",
+    "description": "Уютный диван пастельных тонов. Отличное место для отдыха после тренировок."
+  },
+  {
+    "id": "tea_table",
+    "name": "Чайный столик",
+    "type": "table",
+    "comfort": 20,
+    "price": 120,
+    "currency": "coins",
+    "description": "Круглый столик из темного дерева для чаепитий и настольных бесед."
+  },
+  {
+    "id": "sakura_carpet",
+    "name": "Ковёр с лепестками",
+    "type": "carpet",
+    "comfort": 15,
+    "price": 100,
+    "currency": "coins",
+    "description": "Теплый коврик с узором падающих лепестков сакуры."
+  },
+  {
+    "id": "bonsai_plant",
+    "name": "Мини-бонсай",
+    "type": "plant",
+    "comfort": 10,
+    "price": 80,
+    "currency": "coins",
+    "description": "Карликовая сосна в керамическом горшке, приносящая гармонию и дзен."
+  },
+  {
+    "id": "anime_poster",
+    "name": "Постер шедевра",
+    "type": "wall",
+    "comfort": 10,
+    "price": 50,
+    "currency": "coins",
+    "description": "Красочный настенный постер с любимыми героями."
+  },
+  {
+    "id": "crystal_chandelier",
+    "name": "Хрустальная люстра",
+    "type": "ceiling",
+    "comfort": 50,
+    "price": 25,
+    "currency": "love_gems",
+    "description": "Сияющая люстра, наполняющая комнату волшебным мягким светом."
+  }
+]

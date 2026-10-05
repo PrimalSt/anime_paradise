@@ -1,0 +1,703 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxvgacha123"]
+
+[ext_resource type="Script" path="res://scenes/gacha/GachaView.gd" id="1_gacha"]
+
+[node name="GachaView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gacha")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 10.0
+offset_right = -40.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="BannerTabs" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 15
+
+[node name="BannerHeader" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BannerBg" type="TextureRect" parent="VBoxContainer/BannerHeader"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BgDimmer" type="ColorRect" parent="VBoxContainer/BannerHeader"]
+layout_mode = 2
+color = Color(0.04, 0.04, 0.08, 0.65)
+
+[node name="HBox" type="HBoxContainer" parent="VBoxContainer/BannerHeader"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="VBox" type="VBoxContainer" parent="VBoxContainer/BannerHeader/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+theme_override_constants/separation = 14
+
+[node name="BannerTitle" type="Label" parent="VBoxContainer/BannerHeader/HBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.55, 0.85, 1)
+theme_override_font_sizes/font_size = 40
+text = "Аллея Звёзд"
+horizontal_alignment = 1
+
+[node name="BannerDesc" type="Label" parent="VBoxContainer/BannerHeader/HBox/VBox"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 17
+text = "Стандартный баннер призыва..."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="PityBox" type="VBoxContainer" parent="VBoxContainer/BannerHeader/HBox/VBox"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 6
+
+[node name="PityLabel" type="Label" parent="VBoxContainer/BannerHeader/HBox/VBox/PityBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 15
+text = "Гарант SSR/UR: 0 / 60"
+horizontal_alignment = 1
+
+[node name="PityBar" type="ProgressBar" parent="VBoxContainer/BannerHeader/HBox/VBox/PityBox"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+max_value = 60.0
+value = 15.0
+show_percentage = false
+
+[node name="BtnRates" type="Button" parent="VBoxContainer/BannerHeader/HBox/VBox"]
+custom_minimum_size = Vector2(180, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ℹ Шансы и Правила"
+
+[node name="PortraitPanel" type="PanelContainer" parent="VBoxContainer/BannerHeader/HBox"]
+custom_minimum_size = Vector2(320, 420)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="FeaturedPortrait" type="TextureRect" parent="VBoxContainer/BannerHeader/HBox/PortraitPanel"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Controls" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBoxContainer/Controls"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 40
+
+[node name="BtnPull1" type="Button" parent="VBoxContainer/Controls/HBox"]
+custom_minimum_size = Vector2(240, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "1x Призыв (🪙 100)"
+
+[node name="BtnPull10" type="Button" parent="VBoxContainer/Controls/HBox"]
+custom_minimum_size = Vector2(240, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "10x Призыв (🪙 1000)"
+
+[node name="BtnMultiModeMain" type="Button" parent="VBoxContainer/Controls/HBox"]
+custom_minimum_size = Vector2(260, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "⚡ 10x: Барабаны сразу"
+
+[node name="SummoningOverlay" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="SummoningOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.03, 0.07, 0.96)
+
+[node name="HeaderBox" type="VBoxContainer" parent="SummoningOverlay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 20.0
+offset_right = 400.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="OverlayTitle" type="Label" parent="SummoningOverlay/HeaderBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 32
+text = "🎰 РУЛЕТКА ПРИЗЫВА"
+horizontal_alignment = 1
+
+[node name="OverlaySubtitle" type="Label" parent="SummoningOverlay/HeaderBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 0.85)
+theme_override_font_sizes/font_size = 16
+text = "Следи за указателем... Испытай удачу!"
+horizontal_alignment = 1
+
+[node name="SingleRoulette" type="Control" parent="SummoningOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = -240.0
+offset_right = 750.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NearMissBanner" type="Label" parent="SummoningOverlay/SingleRoulette"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -450.0
+offset_top = -30.0
+offset_right = 450.0
+offset_bottom = 10.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.55, 1)
+theme_override_font_sizes/font_size = 24
+text = "⚡ БЫЛО ТАК БЛИЗКО! ⚡"
+horizontal_alignment = 1
+
+[node name="TapeFrame" type="PanelContainer" parent="SummoningOverlay/SingleRoulette"]
+custom_minimum_size = Vector2(1500, 360)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = -180.0
+offset_right = 750.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TapeViewport" type="Control" parent="SummoningOverlay/SingleRoulette/TapeFrame"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TapeStrip" type="Control" parent="SummoningOverlay/SingleRoulette/TapeFrame/TapeViewport"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftFade" type="TextureRect" parent="SummoningOverlay/SingleRoulette/TapeFrame/TapeViewport"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 180.0
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="RightFade" type="TextureRect" parent="SummoningOverlay/SingleRoulette/TapeFrame/TapeViewport"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="CenterNeedle" type="Control" parent="SummoningOverlay/SingleRoulette/TapeFrame"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LaserLine" type="ColorRect" parent="SummoningOverlay/SingleRoulette/TapeFrame/CenterNeedle"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.85, 0.2, 0.95)
+
+[node name="TopPointer" type="Label" parent="SummoningOverlay/SingleRoulette/TapeFrame/CenterNeedle"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -6.0
+offset_right = 20.0
+offset_bottom = 34.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_font_sizes/font_size = 28
+text = "▼"
+horizontal_alignment = 1
+
+[node name="BottomPointer" type="Label" parent="SummoningOverlay/SingleRoulette/TapeFrame/CenterNeedle"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -34.0
+offset_right = 20.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_font_sizes/font_size = 28
+text = "▲"
+horizontal_alignment = 1
+
+[node name="StatusText" type="Label" parent="SummoningOverlay/SingleRoulette"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 20.0
+offset_right = 400.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.9, 0.6, 1)
+theme_override_font_sizes/font_size = 22
+text = "Крутим барабан..."
+horizontal_alignment = 1
+
+[node name="MultiRoulette" type="Control" parent="SummoningOverlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -820.0
+offset_top = -320.0
+offset_right = 820.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scroll" type="ScrollContainer" parent="SummoningOverlay/MultiRoulette"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid" type="GridContainer" parent="SummoningOverlay/MultiRoulette/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="TopControls" type="HBoxContainer" parent="SummoningOverlay"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -550.0
+offset_top = 22.0
+offset_right = -30.0
+offset_bottom = 68.0
+grow_horizontal = 0
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="BtnModeToggle" type="Button" parent="SummoningOverlay/TopControls"]
+visible = false
+custom_minimum_size = Vector2(190, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "⚡ Все 10 сразу"
+
+[node name="BtnNextPull" type="Button" parent="SummoningOverlay/TopControls"]
+visible = false
+custom_minimum_size = Vector2(190, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Следующий ▶"
+
+[node name="BtnSkip" type="Button" parent="SummoningOverlay/TopControls"]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Пропустить ▶▶"
+
+[node name="Particles" type="CPUParticles2D" parent="SummoningOverlay"]
+position = Vector2(960, 540)
+emitting = false
+amount = 80
+lifetime = 1.4
+one_shot = true
+explosiveness = 0.85
+randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 120.0
+spread = 180.0
+gravity = Vector2(0, 80)
+initial_velocity_min = 180.0
+initial_velocity_max = 480.0
+scale_amount_min = 5.0
+scale_amount_max = 14.0
+color = Color(1, 0.85, 0.3, 1)
+
+[node name="SingleRevealOverlay" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="SingleRevealOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.03, 0.07, 0.94)
+
+[node name="TopActions" type="HBoxContainer" parent="SingleRevealOverlay"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -460.0
+offset_top = 22.0
+offset_right = -30.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme_override_constants/separation = 14
+alignment = 2
+
+[node name="BtnRevealNext" type="Button" parent="SingleRevealOverlay/TopActions"]
+visible = false
+custom_minimum_size = Vector2(190, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Следующий ▶"
+
+[node name="BtnRevealSkipAll" type="Button" parent="SingleRevealOverlay/TopActions"]
+visible = false
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Пропустить все ⏭"
+
+[node name="CardCenter" type="Control" parent="SingleRevealOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardHolder" type="PanelContainer" parent="SingleRevealOverlay/CardCenter"]
+custom_minimum_size = Vector2(380, 560)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -280.0
+offset_right = 190.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="SingleRevealOverlay/CardCenter/CardHolder"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PortraitBox" type="PanelContainer" parent="SingleRevealOverlay/CardCenter/CardHolder/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Portrait" type="TextureRect" parent="SingleRevealOverlay/CardCenter/CardHolder/VBox/PortraitBox"]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="RarityBadge" type="Label" parent="SingleRevealOverlay/CardCenter/CardHolder/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "★ SSR ★"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="SingleRevealOverlay/CardCenter/CardHolder/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Райдэн Сёгун"
+horizontal_alignment = 1
+
+[node name="FranchiseLabel" type="Label" parent="SingleRevealOverlay/CardCenter/CardHolder/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Genshin Impact"
+horizontal_alignment = 1
+
+[node name="QuoteLabel" type="Label" parent="SingleRevealOverlay/CardCenter/CardHolder/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.95, 0.7, 1)
+theme_override_font_sizes/font_size = 15
+text = "«Я повелеваю молнией...»"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="DuplicateLabel" type="Label" parent="SingleRevealOverlay/CardCenter/CardHolder/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.4, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Дубликат: +15 🔮 Осколков души"
+horizontal_alignment = 1
+
+[node name="TapToContinue" type="Label" parent="SingleRevealOverlay"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8, 0.8, 0.9, 0.8)
+theme_override_font_sizes/font_size = 16
+text = "Нажмите в любом месте, чтобы продолжить ▶"
+horizontal_alignment = 1
+
+[node name="ResultModal" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="ResultModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.03, 0.07, 0.94)
+
+[node name="Panel" type="PanelContainer" parent="ResultModal"]
+custom_minimum_size = Vector2(1360, 780)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -680.0
+offset_top = -390.0
+offset_right = 680.0
+offset_bottom = 390.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="ResultModal/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="ResultModal/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="HeaderHBox" type="HBoxContainer" parent="ResultModal/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="ResultModal/Panel/Margin/VBox/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.98, 0.5, 0.85, 1)
+theme_override_font_sizes/font_size = 30
+text = "✨ РЕЗУЛЬТАТ ПРИЗЫВА ✨"
+horizontal_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="ResultModal/Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CardsContainer" type="HFlowContainer" parent="ResultModal/Panel/Margin/VBox/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 18
+
+[node name="ActionsHBox" type="HBoxContainer" parent="ResultModal/Panel/Margin/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 25
+
+[node name="BtnPullAgain1" type="Button" parent="ResultModal/Panel/Margin/VBox/ActionsHBox"]
+custom_minimum_size = Vector2(220, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "🎰 Еще 1x (🪙 100)"
+
+[node name="BtnPullAgain10" type="Button" parent="ResultModal/Panel/Margin/VBox/ActionsHBox"]
+custom_minimum_size = Vector2(220, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "🎰 Еще 10x (🪙 1000)"
+
+[node name="BtnClose" type="Button" parent="ResultModal/Panel/Margin/VBox/ActionsHBox"]
+custom_minimum_size = Vector2(200, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "✓ Забрать всё"
+
+[node name="RatesModal" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="RatesModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.85)
+
+[node name="Panel" type="PanelContainer" parent="RatesModal"]
+custom_minimum_size = Vector2(700, 520)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -260.0
+offset_right = 350.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="RatesModal/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 25
+
+[node name="VBox" type="VBoxContainer" parent="RatesModal/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RatesTitle" type="Label" parent="RatesModal/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
+theme_override_font_sizes/font_size = 24
+text = "Вероятности призыва"
+horizontal_alignment = 1
+
+[node name="RatesContent" type="RichTextLabel" parent="RatesModal/Panel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Шансы выпадения..."
+
+[node name="BtnCloseRates" type="Button" parent="RatesModal/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(180, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Понятно"
